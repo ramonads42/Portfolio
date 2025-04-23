@@ -15,7 +15,7 @@ Este é um portfólio acadêmico desenvolvido com Node.js, Express e EJS.
 4. Acesse no navegador: `http://localhost:3000`
 
 ## Estrutura do projeto
-- `app.js`: Arquivo principal com configurações do servidor
+- `app.js`: Arquivo principal com configurações do servidor e paginas
 - `public/`: Arquivos estáticos (CSS, imagens, etc.)
 - `views/`: Templates EJS
 - `views/partials/`: Componentes reutilizáveis (header, footer)
