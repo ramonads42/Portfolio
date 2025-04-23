@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= titulo %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="name">Ramon Amorim da Silva</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/projetos">PROJETOS</a></li>
+                    <li><a href="/publicacoes">PUBLICAÇÔES</a></li>
+                    <li><a href="/habilidades">HABILIDADES</a></li>
+                    <li><a href="/contato">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="header-content">
+            <h2><%= titulo %></h2>
+        </div>
+    </section>
+
+    <main class="container contact-page">
+        <div class="contact-info">
+            <h3>Informações de Contato</h3>
+            <div class="info-item">
+                <span class="label">E-mail:</span>
+                <a href="mailto:<%= contato.email %>"><%= contato.email %></a>
+            </div>
+            <div class="info-item">
+                <span class="label">LinkedIn:</span>
+                <a href="https://www.linkedin.com/in/ramon-amorim-da-silva-512a54327/ %>" target="_blank"><%= contato.linkedin %></a>
+            </div>
+            <div class="info-item">
+                <span class="label">GitHub:</span>
+                <a href="https://<%= contato.github %>" target="_blank"><%= contato.github %></a>
+            </div>
+        </div>
+
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Ramon Amorim da Silva | Portfólio Acadêmico</p>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

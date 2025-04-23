@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= titulo %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="name"><%= nome %></h1>
+            <nav>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/projetos">PROJETOS</a></li>
+                    <li><a href="/publicacoes">PUBLICAÇÔES</a></li>
+                    <li><a href="/habilidades">HABILIDADES</a></li>
+                    <li><a href="/contato">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero-content">
+        <div class="profile-image">
+            <img src="/img/EU.jpeg" alt="<%= nome %>" class="profile-photo">
+        </div>
+    </div>>
+
+    <main class="container">
+        <section class="about-me">
+            <h3>Sobre Mim</h3>
+            <p><%= descricao %></p>
+            
+            <h3>Formação Acadêmica</h3>
+            <ul>
+                <% formacao.forEach(item => { %>
+                    <li><%= item.curso %> (<%= item.status %>)</li>
+                <% }); %>
+            </ul>
+
+            <h3>Idiomas</h3>
+            <ul>
+                <li><strong>Inglês:</strong> Avançado – 3 anos de estudo na Escola Academy</li>
+            </ul>
+        </div>
+        </section>
+
+        <section class="skills">
+            <h3>Experiência Profissional</h3>
+            
+            <ul>
+                <liv>
+                    <strong>Estagiário de Suporte Técnico – INPE (Instituto Nacional de Pesquisas Espaciais)</strong><br>
+                    <em>Laboratório GAMA | 8 meses</em><br>
+                    Era reponsavel pela formatação e manutenção de computadores, além de colaborar em um projeto com MATLAB, desenvolvendo comandos básicos para controle de motores de passo.
+                </liv>
+            </ul>
+             <ul>
+                <liv>
+                    <strong>Estagiário de Suporte Técnico – Prefeitura Municipal de São José dos Campos</strong><br>
+                    <em>Escola Estadual Profª Sebastiana Cobra | 2 anos</em><br>
+                    Responsável pela organização, manutenção e suporte técnico de equipamentos eletrônicos da escola.
+                </liv>
+            </ul>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - <%= nome %> | Portfólio Acadêmico</p>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

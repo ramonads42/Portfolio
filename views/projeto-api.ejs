@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= titulo %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="name">Ramon Amorim da Silva</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/projetos">PROJETOS</a></li>
+                    <li><a href="/publicacoes">PUBLICAÇÔES</a></li>
+                    <li><a href="/habilidades">HABILIDADES</a></li>
+                    <li><a href="/contato">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project-hero">
+        <div class="hero-content">
+            <h2>Projeto Integrador (API) - Aeroporto SJK</h2>
+            <p>Mapeamento de potenciais cargas para movimentação no aeroporto SJK</p>
+        </div>
+    </section>
+
+    <main class="container api-project">
+        <section class="project-content">
+
+            <% const equipe = [
+                { funcao: 'Product Owner', nome: 'Daniel Rodrigues Pontes' },
+                { funcao: 'Scrum Master', nome: 'Caroline Beatriz Souza Thomaz' },
+                { funcao: 'Team Member', nome: 'André Luiz Raymundo Alves' },
+                { funcao: 'Team Member', nome: 'Fabrina Camargo dos Santos' },
+                { funcao: 'Team Member', nome: 'Lara Vitória de Almeida Fernandes' },
+                { funcao: 'Team Member', nome: 'Manoele Moraes Rosas' },
+                { funcao: 'Team Member', nome: 'Milena Profeta Ribeiro de Oliveira' },
+                { funcao: 'Team Member', nome: 'Ramon Amorim da Silva' }
+            ]; %>
+
+            <h3>Equipe</h3>
+            <table class="team-table">
+                <thead>
+                    <tr>
+                        <th>Função</th>
+                        <th>Nome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% equipe.forEach(membro => { %>
+                        <tr>
+                            <td><%= membro.funcao %></td>
+                            <td><%= membro.nome %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+
+            <article id="objetivo-do-projeto">
+                <h3>Objetivo do Projeto</h3>
+                <p>Este estudo tem como propósito evidenciar às empresas dos municípios da Região Metropolitana do Vale do Paraíba e Litoral Norte, que realizam importações e exportações de mercadorias pelos aeroportos de Guarulhos e Viracopos, a utilizarem o aeroporto de São José dos Campos como um ponto estratégico de distribuição e recebimento de suas mercadorias.</p>
+            </article>
+
+            <article id="sprints">
+                <h3>Sprints</h3>
+                <p>Informações sobre as sprints do projeto serão adicionadas aqui conforme o desenvolvimento avança.</p>
+            </article>
+
+            <article id="backlog-da-sprints">
+                <h3>Backlog das Sprints</h3>
+                <img src="/img/ApiLog1/0.png" alt="Backlog das Sprints">          
+                <img src="/img/ApiLog1/1.png" alt="Backlog das Sprints">  
+            </article>
+
+            <article id="backlog-do-produto">
+                <h3>Backlog do Produto</h3>          
+                <img src="/img/ApiLog1/2.png" alt="Backlog do Produto">
+            </article>
+
+            <article id="priorizacao">
+                <h3>Priorização</h3> 
+                <img src="/img/ApiLog1/3.png" alt="Prioridade na Sprint">
+                <img src="/img/ApiLog1/4.png" alt="Prioridade na Sprint">
+                <img src="/img/ApiLog1/5.png" alt="Prioridade na Sprint">
+            </article>
+
+            <article id="Dashboard1">
+                <h3>Dashboard</h3>
+                <img src="/img/ApiLog1/Dash.jpeg" alt="Dashboard">
+            </article>
+            <article id="DashboardImp">
+                <img src="/img/ApiLog1/DashImp.jpeg" alt="Dashboard">
+            </article>
+            <article id="DashboardExp">
+                <img src="/img/ApiLog1/DashExp.jpeg" alt="Dashboard">
+            </article>
+            <article id="objetivo-do-dashboard">
+                <h2>
+                    O dashboard apresentado acima tem como objetivo visualizar e interpretar os dados referentes às importações e exportações realizadas na Região Metropolitana do Vale do Paraíba e Litoral Norte durante o ano de 2024. Ele apresenta a porcentagem das operações que ocorreram por via aérea, a média do valor agregado dos produtos (indicando o nível de sofisticação das mercadorias), além da soma do valor FOB — ou seja, o valor das mercadorias na origem, sem incluir frete ou seguro — e da quantidade estatística (QT_ESTAT), que representa o volume total transportado em unidades padronizadas. Com base nesses dados, o projeto propõe uma alternativa estratégica para que as empresas da região utilizem o Aeroporto de São José dos Campos como ponto logístico para recebimento e distribuição de mercadorias, otimizando rotas, reduzindo custos e fortalecendo a infraestrutura regional.
+                </h2>
+                
+            </article>
+
+            <article>
+                <div>
+                <h3>Tecnologias Utilizadas</h3>
+                <h2><img src="/img/git.png" alt="GITHUB logo" width="20"> GitHub</h2>
+                <h2><img src="/img/jira.png" alt="Jira Software logo" width="20"> Jira Software</h2>
+                <h2><img src="/img/power.png" alt="Power BI logo" width="20"> Power BI</h2>
+                <h2><img src="/img/Slack.png" alt="Slack logo" width="20"> Slack</h2>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Ramon Amorim da Silva | Portfólio Acadêmico</p>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
