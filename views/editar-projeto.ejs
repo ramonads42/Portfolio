@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= titulo %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Adicione estilos específicos para o formulário de edição se necessário,
+           ou reusar os estilos .form-group de novo-projeto.ejs */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="file"] {
+            padding: 5px 0;
+        }
+        .btn-update { /* Novo estilo para o botão de atualização */
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn-update:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="name">Ramon Amorim da Silva</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/projetos">PROJETOS</a></li>
+                    <li><a href="/publicacoes">PUBLICAÇÕES</a></li>
+                    <li><a href="/habilidades">HABILIDADES</a></li>
+                    <li><a href="/contato">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2><%= titulo %></h2>
+        <form action="/projetos/<%= projeto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="nome">Nome do Projeto:</label>
+                <input type="text" id="nome" name="nome" value="<%= projeto.nome %>" required>
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" rows="5" required><%= projeto.descricao %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="tecnologias">Tecnologias (separadas por vírgula):</label>
+                <input type="text" id="tecnologias" name="tecnologias" value="<%= projeto.tecnologias %>">
+            </div>
+            <div class="form-group">
+                <label for="pdfProjeto">Novo PDF do Projeto (opcional):</label>
+                <input type="file" id="pdfProjeto" name="pdfProjeto" accept="application/pdf">
+                <% if (projeto.pdf_path) { %>
+                    <small>PDF atual: <a href="<%= projeto.pdf_path %>" target="_blank">Ver PDF</a></small>
+                <% } %>
+            </div>
+            <button type="submit" class="btn-update">Atualizar Projeto</button>
+            <a href="/projetos/<%= projeto.id %>" class="btn">Cancelar</a>
+        </form>
+    </main>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

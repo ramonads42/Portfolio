@@ -14,7 +14,7 @@
                 <ul>
                     <li><a href="/">HOME</a></li>
                     <li><a href="/projetos">PROJETOS</a></li>
-                    <li><a href="/publicacoes">PUBLICAÇÔES</a></li>
+                    <li><a href="/publicacoes">PUBLICAÇÕES</a></li>
                     <li><a href="/habilidades">HABILIDADES</a></li>
                     <li><a href="/contato">CONTATO</a></li>
                 </ul>
@@ -29,28 +29,21 @@
     </section>
     <main class="container skills-page">
         <section class="skills-section">
-
-            <section class="skills-info">
-                <div class="info-card">
-                    <h3>A Logistica de Suprimentos</h3>
-    <p>
-        Este estudo tem como tema a Logística/Cadeia de Suprimentos, um conjunto de atividades funcionais que se repetem inúmeras vezes ao longo do canal pelo qual matérias-primas são convertidas em produtos acabados, aos quais se agrega valor ao consumidor.
-
-    </p>
-
-    <ul>
-        <li>
-            <strong>Relatório</strong>
-            <ul class="skills-list">
-                <li><a href="/relatorio/A LOGISTICA DE SUPRIMENTOS.docx.pdf" target="_blank">A LOGISTICA DE SUPRIMENTOS</a></li>
-            </ul>
-        </li>
-    </ul>
+            <% if (publicacoes && publicacoes.length > 0) { %>
+                <% publicacoes.forEach(publicacao => { %>
+                    <div class="info-card publication-card">
+                        <h3>[ID: <%= publicacao.id %>] <%= publicacao.titulo %></h3>
+                        <p><%= publicacao.descricao %></p>
+                        <% if (publicacao.pdf_path) { %>
+                            <a href="<%= publicacao.pdf_path %>" target="_blank" class="btn-small">Ver PDF</a>
+                        <% } %>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>Nenhuma publicação cadastrada ainda.</p>
+            <% } %>
+        </section>
     </main>
-
-    <footer>
-        <p>&copy; 2025 - Ramon Amorim da Silva | Portfólio Acadêmico</p>
-    </footer>
 
     <script src="/js/script.js"></script>
 </body>

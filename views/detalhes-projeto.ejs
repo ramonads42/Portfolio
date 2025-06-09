@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= titulo %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .project-details {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px; 
+        }
+        .project-details h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .project-details p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .project-details strong {
+            color: #555;
+        }
+        .project-details .btn-detail { 
+            margin-right: 10px;
+            background-color: #007bff;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .project-details .btn-detail:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="name">Ramon Amorim da Silva</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/projetos">PROJETOS</a></li>
+                    <li><a href="/publicacoes">PUBLICAÇÕES</a></li>
+                    <li><a href="/habilidades">HABILIDADES</a></li>
+                    <li><a href="/contato">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="project-details">
+            <h2><%= projeto.nome %></h2>
+            <p><strong>Descrição:</strong> <%= projeto.descricao %></p>
+            <% if (projeto.tecnologias) { %>
+                <p><strong>Tecnologias:</strong> <%= projeto.tecnologias %></p>
+            <% } %>
+            <% if (projeto.pdf_path) { %>
+                <p><strong>PDF:</strong> <a href="<%= projeto.pdf_path %>" target="_blank" class="btn-detail">Abrir PDF</a></p> <% } %>
+            <a href="/projetos" class="btn-detail">Voltar para Projetos</a> <a href="/projetos/<%= projeto.id %>/editar" class="btn-detail btn-edit">Editar Projeto</a> </section>
+    </main>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

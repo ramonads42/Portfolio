@@ -5,13 +5,20 @@
     box-sizing: border-box;
 }
 
-body {
+/* MODIFICAÇÃO PRINCIPAL PARA STICKY FOOTER */
+html, body {
+    height: 100%; /* Garante que html e body ocupam toda a altura da viewport */
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
+    display: flex; /* Transforma o body em um container flexível */
+    flex-direction: column; /* Organiza os itens (header, main, footer) em coluna */
 }
 
+/* O container principal do conteúdo */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -35,6 +42,7 @@ header {
     background-color: #2c3e50;
     color: white;
     padding: 20px 0;
+    flex-shrink: 0; /* Previne que o header encolha */
 }
 
 .header-content {
@@ -75,6 +83,7 @@ nav ul li a:hover {
     color: white;
     text-align: center;
     padding: 80px 20px;
+    flex-shrink: 0;
 }
 
 .hero-content h2 {
@@ -187,6 +196,7 @@ nav ul li a:hover {
     padding: 20px 0;
     text-align: center;
     margin-top: 30px;
+    flex-shrink: 0;
 }
 
 .featured-project h3 {
@@ -213,13 +223,14 @@ nav ul li a:hover {
     background: #2980b9;
 }
 
-/* Footer */
+/* Footer - AJUSTADO PARA STICKY FOOTER */
 footer {
     background-color: #2c3e50;
     color: white;
     text-align: center;
     padding: 10px 0;
-    margin-top: 30px;
+    flex-shrink: 0; /* Garante que o rodapé não encolha */
+    margin-top: auto; /* Empurra o rodapé para baixo se houver espaço */
 }
 
 /* Responsive */
@@ -227,20 +238,20 @@ footer {
     .container {
         flex-direction: column;
     }
-    
+
     .about-me, .skills {
         max-width: 100%;
         margin-right: 0;
     }
-    
+
     .header-content {
         flex-direction: column;
     }
-    
+
     nav ul {
         margin-top: 20px;
     }
-    
+
     nav ul li {
         margin: 0 10px;
     }
@@ -252,9 +263,11 @@ footer {
     color: white;
     padding: 30px 0;
     text-align: center;
+    flex-shrink: 0;
 }
 
 .skills-page {
+    flex: 1; /* Faz esta seção ocupar o espaço restante */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -283,7 +296,7 @@ footer {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    height: 100%;
+    /* Removido: height: 100%; para que a altura se ajuste ao conteúdo */
 }
 
 .skills-section h3 {
@@ -344,19 +357,18 @@ footer {
     .skills-page {
         flex-direction: column;
     }
-    
+
     .skills-section {
         margin-right: 0;
         margin-bottom: 20px;
     }
 }
 
-/* Estilos para a página de projetos */
+/* Estilos para a página de projetos - AJUSTADO */
 .projects-page {
-    display: flex;
-    flex-direction: column;
     max-width: 1000px;
     margin: 30px auto;
+    flex: 1; /* FAZ O CONTAINER PRINCIPAL DA PÁGINA DE PROJETOS OCUPAR O ESPAÇO */
 }
 
 .project-card {
@@ -364,7 +376,7 @@ footer {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
+    margin-bottom: 40px; /* Aumentado o espaçamento inferior */
     transition: transform 0.3s;
 }
 
@@ -418,12 +430,40 @@ footer {
     background: #2980b9;
 }
 
+/* Novo estilo para botões pequenos como "Ver PDF" na lista de projetos */
+.btn-small {
+    display: inline-block;
+    background: #5cb85c;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-right: 10px;
+    transition: background 0.3s;
+    font-size: 14px;
+}
+
+.btn-small:hover {
+    background: #4cae4c;
+}
+
+/* Estilos para o botão de exclusão */
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+
 /* Estilos para a página de detalhes do projeto API */
 .project-hero {
     background-color: #3498db;
     color: white;
     text-align: center;
     padding: 60px 20px;
+    flex-shrink: 0;
 }
 
 .project-hero h2 {
@@ -436,6 +476,7 @@ footer {
     max-width: 1200px;
     margin: 40px auto;
     gap: 30px;
+    flex: 1;
 }
 
 .project-nav {
@@ -534,7 +575,7 @@ footer {
     .api-project {
         flex-direction: column;
     }
-    
+
     .project-nav {
         position: static;
         width: 100%;
@@ -548,6 +589,7 @@ footer {
     gap: 30px;
     max-width: 1200px;
     margin: 40px auto;
+    flex: 1;
 }
 
 .contact-info, .contact-form {
@@ -619,7 +661,14 @@ footer {
         flex-direction: column;
     }
 }
+.btn-edit {
+    background-color: #ffc107; 
+    color: #212529; 
+}
 
+.btn-edit:hover {
+    background-color: #e0a800;
+}
 .profile-photo {
     width: 150px;
     height: 150px;

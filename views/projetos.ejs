@@ -14,7 +14,7 @@
                 <ul>
                     <li><a href="/">HOME</a></li>
                     <li><a href="/projetos">PROJETOS</a></li>
-                    <li><a href="/publicacoes">PUBLICAÇÔES</a></li>
+                    <li><a href="/publicacoes">PUBLICAÇÕES</a></li>
                     <li><a href="/habilidades">HABILIDADES</a></li>
                     <li><a href="/contato">CONTATO</a></li>
                 </ul>
@@ -29,29 +29,24 @@
     </section>
     <main class="container skills-page">
         <section class="skills-section">
-
-            <section class="skills-info">
-                <div class="info-card">
-                    <h3>Projeto Integrador(API) 1º Semestre de Logística</h3>
-    <p>
-        O projeto integrador (API) é um projeto pedagógico, onde o ensino é focado no desenvolvimento de um produto que auxilia visualizar e mapear potenciais cargas para movimentação no aeroporto SJK com base em dados de importações de municípios da região do Vale do Paraíba e Litoral Norte no ano de 2024.
-
-    </p>
-
-    <ul>
-        <li><strong>Ferramentas Utilizadas:</strong>         <ul class="skills-list">
-            <li><img src="/img/git.png" alt="GITHUB logo" width="20"> GitHub</li>
-            <li><img src="/img/jira.png" alt="Jira Software logo" width="20"> Jira Software</li>
-            <li><img src="/img/power.png" alt="Power BI logo" width="20"> Power BI</li>
-            <li><img src="/img/Slack.png" alt="Slack logo" width="20"> Slack</li>
-        </ul></li>
-        <a href="/projetos/api" class="btn">Ver Detalhes</a>        
-        
+            <% if (projetos && projetos.length > 0) { %>
+                <% projetos.forEach(projeto => { %>
+                    <div class="info-card project-card">
+                        <h3>[ID: <%= projeto.id %>] <%= projeto.nome %></h3>
+                        <p><%= projeto.descricao %></p>
+                        <% if (projeto.tecnologias) { %>
+                            <p><strong>Tecnologias:</strong> <%= projeto.tecnologias %></p>
+                        <% } %>
+                        <% if (projeto.pdf_path) { %>
+                            <a href="<%= projeto.pdf_path %>" target="_blank" class="btn-small">Ver PDF</a>
+                        <% } %>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>Nenhum projeto cadastrado ainda.</p>
+            <% } %>
+        </section>
     </main>
-
-    <footer>
-        <p>&copy; 2025 - Ramon Amorim da Silva | Portfólio Acadêmico</p>
-    </footer>
 
     <script src="/js/script.js"></script>
 </body>

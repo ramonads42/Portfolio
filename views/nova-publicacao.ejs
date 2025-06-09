@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= titulo %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Estilos básicos para o formulário */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="file"] {
+            padding: 5px 0;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="name">Ramon Amorim da Silva</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/projetos">PROJETOS</a></li>
+                    <li><a href="/publicacoes">PUBLICAÇÕES</a></li>
+                    <li><a href="/habilidades">HABILIDADES</a></li>
+                    <li><a href="/contato">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2><%= titulo %></h2>
+        <form action="/publicacoes" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="titulo">Título da Publicação:</label>
+                <input type="text" id="titulo" name="titulo" required>
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="pdfPublicacao">PDF da Publicação:</label>
+                <input type="file" id="pdfPublicacao" name="pdfPublicacao" accept="application/pdf">
+            </div>
+            <button type="submit" class="btn">Adicionar Publicação</button>
+        </form>
+    </main>
+
+
+</body>
+</html>
