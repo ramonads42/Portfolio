@@ -1,8 +1,5 @@
 const mysql = require('mysql2');
 
-
-// --- EXEMPLO DE USO ---
-// Para usar, execute este script no terminal e passe os argumentos.
 // Ex: node excluirdados.js projeto '10'
 // Ex: node excluirdados.js publicacao '10'
 
