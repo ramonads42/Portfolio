@@ -89,8 +89,7 @@ const projectData = {
     pdfPath: path.join(__dirname, '')
 };
 
-// --- Configuração para PUBLICAÇÕES ---
-// Preencha SOMENTE se 'itemType' for 'publicacao'
+// Configuração para PUBLICAÇÕES
 const publicationData = {
     titulo: 'A LOGISTICA DE SUPRIMENTOS',
     descricao: 'Trabalho de Graduação apresentado à Faculdade de Tecnologia de São José dos Campos, como parte dos requisitos necessários para a obtenção da média semestral de Métodos para a Produção de Conhecimento.',
@@ -98,7 +97,7 @@ const publicationData = {
 };
 
 
-// --- PROCESSO DE INSERÇÃO PRINCIPAL (NÃO MEXA AQUI) ---
+// PROCESSO DE INSERÇÃO PRINCIPAL
 async function mainInsertProcess() {
     try {
         if (itemType === 'projeto') {
@@ -124,7 +123,7 @@ async function mainInsertProcess() {
         console.error('\n--- ERRO DURANTE A INSERÇÃO DE DADOS ---');
         console.error(error);
     } finally {
-        db.end(); // Fecha a conexão com o banco de dados
+        db.end();
         console.log('\nConexão com o MySQL encerrada.');
     }
 }
